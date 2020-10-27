@@ -62,7 +62,6 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.ViewHolder>
                     if(position != RecyclerView.NO_POSITION){
                         Data item = items.get(position);
                         Intent intent = new Intent(v.getContext(), DetailRouteActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         v.getContext().startActivity(intent);
                     }
                 }

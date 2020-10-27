@@ -55,6 +55,9 @@ public class DetailRouteActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(DetailRouteActivity.this, MainActivity.class);
                 //intent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent2);
+//                intent2.setAction(Intent.ACTION_MAIN);
+//                intent2.addCategory(Intent.CATEGORY_LAUNCHER);
+//                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             }
         });
     }

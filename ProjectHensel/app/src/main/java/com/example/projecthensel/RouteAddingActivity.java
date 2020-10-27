@@ -5,12 +5,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.text.Layout;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,15 +28,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RouteAddingActivity extends AppCompatActivity {
 
-    Button returnButton, addButton;
+    Button returnButton, addButton, searchButton;
     TextView countText;
-    EditText addressEdit, yearEdit, monthEdit, dateEdit, hourStartEdit, minStartEdit, hourEndEdit, minEndEdit, memoEdit, et;
-    DateAdapter adapter;
+    EditText addressEdit, yearEdit, monthEdit, dateEdit, hourStartEdit, minStartEdit, hourEndEdit, minEndEdit, memoEdit;
+    WebView daum_webView;
     String year, month, date, memo,address, startHour, startMin, endHour, endMin;
     InputMethodManager imm;
     ConstraintLayout mainLayout;
-    SharedPreferences pref;
-    SharedPreferences.Editor editor;
     int count = 0;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class RouteAddingActivity extends AppCompatActivity {
         final int code2 = 1002;
         returnButton = (Button) findViewById(R.id.addToAllButton);
         addButton = (Button) findViewById(R.id.addButton);
+        searchButton = (Button) findViewById(R.id.searchButton);
         countText = (TextView)findViewById(R.id.countText);
         addressEdit = (EditText) findViewById(R.id.addressEdit);
         yearEdit = (EditText)findViewById(R.id.yearEdit);
@@ -60,7 +62,7 @@ public class RouteAddingActivity extends AppCompatActivity {
         //추가 하기전 다시 알리는 객체
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-
+        //배경을 누를시 키보드가 내려가게 하는 코드
         mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +70,7 @@ public class RouteAddingActivity extends AppCompatActivity {
                 imm.hideSoftInputFromWindow(addressEdit.getWindowToken(), 0);
             }
         });
-
+        //index 페이지로 돌아가는 코드
         returnButton.setOnClickListener(new View.OnClickListener() { // All Route 페이지로 이동하는 인텐트
             @Override
             public void onClick(View v) {
@@ -76,6 +78,7 @@ public class RouteAddingActivity extends AppCompatActivity {
                 startActivityForResult(intent, code2);
             }
         });
+        //EditText에 입력하고 추가하기 위한 코드
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +125,14 @@ public class RouteAddingActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        searchButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
     public void insertData(Intent intent){
         intent.putExtra("bool", "1");
@@ -148,4 +159,5 @@ public class RouteAddingActivity extends AppCompatActivity {
         minEndEdit.setText("");
         addressEdit.setText("");
     }
+
 }
