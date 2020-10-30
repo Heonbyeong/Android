@@ -14,6 +14,8 @@
 * https://m.blog.naver.com/PostView.nhn?blogId=booboo84&logNo=30172704750&proxyReferer=https:%2F%2Fwww.google.com%2F << intent시 액티비티 재사용 막기
 * https://www.youtube.com/watch?v=pG6OkJ3rSjg << Room 사용 예제(영상)
 * https://medium.com/%EC%8A%AC%EA%B8%B0%EB%A1%9C%EC%9A%B4-%EA%B0%9C%EB%B0%9C%EC%83%9D%ED%99%9C/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-room-%EC%82%AC%EC%9A%A9%EB%B2%95-1b7bd07b4cee << Room 사용법(글)
+* https://vmao.tistory.com/762 << dialog 배경터치, back키 무력화
+* https://comoi.io/174 << diglog 버튼 색상 커스텀
 
 
 
