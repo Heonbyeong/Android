@@ -18,6 +18,7 @@
 * https://stackoverrun.com/ko/q/13111521 << diglog 버튼 색상 커스텀
 * https://kobbi-reply.tistory.com/8 << 리사이클러뷰 끊김현상 제거
 * https://developer.android.com/jetpack/androidx/releases/recyclerview?hl=ko << setStateRestorationStrategy (지연상태 복원)
+* https://stackoverflow.com/questions/28236390/recyclerview-store-restore-state-between-activities << 스크롤 상태저장
 
 
 
