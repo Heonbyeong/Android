@@ -20,8 +20,7 @@
 * https://developer.android.com/jetpack/androidx/releases/recyclerview?hl=ko << setStateRestorationStrategy (지연상태 복원)
 * https://stackoverflow.com/questions/28236390/recyclerview-store-restore-state-between-activities << 스크롤 상태저장
 * https://ddangeun.tistory.com/68 << Room RecyclerView
-
-
+* https://dreamaz.tistory.com/63 << dialog AppCompat 오류에 대해
 
 ```
 recyclerView.setLayoutManager(new LinearLayoutManager(this));
