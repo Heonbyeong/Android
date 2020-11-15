@@ -150,6 +150,73 @@ transaction.commit();
 
 
 
+# 액티비티와의 통신
+
+**액티비티에서 발생한 이벤트가 하나의 프래그먼트에 속한 특정 UI에 변화를 주는 방법**
+
+
+
+## 액티비티와 프래그먼트, 서로의 자원에 직접 접근하기
+
+FragmentManager에 속한 **findFragmentById()** 또는 **findFragmentByTag()**로 원하는 참조를 가져올 수 있고, 해당 프래그먼트의 함수, 변수에 접근할 수 있게 됨
+
+
+
+**findFragmentById() / findFragmentByTag() 차이점**
+
+ById : 레이아웃이 있는 프래그먼트
+
+ByTag : 레이아웃이 없는 프래그먼트
+
+
+
+### 액티비티에서 프래그먼트 자원 접근
+
+```java
+FirstFragment fragment = (FirstFragment)getSupportFragmentManager().findFragmentById(R.id.first_fragment);
+
+출처: https://tedrepository.tistory.com/6?category=707850 [Ted's IT Repository]
+```
+
+
+
+아래와 같이 생성한 프래그먼트에 대해서는 자원에 직접 접근 할 수 없음
+
+```java
+mFirstFragment = new FirstFragment();
+
+출처: https://tedrepository.tistory.com/6?category=707850 [Ted's IT Repository]
+```
+
+
+
+**프래그먼트 내의 세부 컴포넌트에 접근하기 위해서는 꼭 프래그먼트 매니저를 통해 참조값을 받아와야 접근 가능**
+
+
+
+### 프래그먼트에서 액티비티 자원 접근
+
+프래그먼트가 종속된 액티비티를 알기 위해 **getActivity()**메소드 사용
+
+```java
+@Override
+public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+super.onActivityCreated(savedInstanceState);
+
+TextView textView = (TextView) getActivity().findViewById(R.id.textView1);
+textView.setText("applied!!");
+
+}
+
+출처: https://tedrepository.tistory.com/6?category=707850 [Ted's IT Repository]
+```
+
+
+
+# 출처
+
+https://tedrepository.tistory.com/6?category=707850
+
 
 
 # 참고하면 도움되는 자료
