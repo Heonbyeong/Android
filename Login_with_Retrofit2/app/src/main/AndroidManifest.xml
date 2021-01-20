@@ -11,14 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login_with_Retrofit2"
         android:usesCleartextTraffic="true" >
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".Activity.LoginActivity"/>
     </application>
 
 </manifest>
