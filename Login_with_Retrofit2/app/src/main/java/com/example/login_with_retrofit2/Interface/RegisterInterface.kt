@@ -7,7 +7,7 @@ import retrofit2.http.POST
 
 interface RegisterInterface {
     companion object{
-        val REGIST_URL = "http://121.159.100.77/"
+        val REGIST_URL = "http://192.168.0.26:80"
     }
 
     @FormUrlEncoded
@@ -15,6 +15,6 @@ interface RegisterInterface {
     fun getUserRegist(
             @Field("name") name : String,
             @Field("userName") userName : String,
-            @Field("password") passwod : String
+            @Field("password") password : String
     ) : Call<String>
 }

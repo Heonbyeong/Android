@@ -16,12 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     else
     {
-        $query= "SELECT * FROM retrofitRegister WHERE userName='$userName' AND password='$password'";
+        $query= "SELECT * FROM user WHERE userName='$userName' AND password='$password'";
         $result= mysqli_query($con, $query);
 
         if(mysqli_num_rows($result) > 0)
         {
-            $query= "SELECT * FROM retrofitRegister WHERE userName='$userName' AND password='$password'";
+            $query= "SELECT * FROM user WHERE userName='$userName' AND password='$password'";
             $result= mysqli_query($con, $query);
             $emparray = array();
             if(mysqli_num_rows($result) > 0)

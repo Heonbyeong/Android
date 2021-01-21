@@ -17,6 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 class MainActivity : AppCompatActivity() {
@@ -47,12 +48,14 @@ class MainActivity : AppCompatActivity() {
         val retrofit = Retrofit.Builder()
                 .baseUrl(RegisterInterface.REGIST_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
         val api = retrofit.create(RegisterInterface::class.java)
         val call = api.getUserRegist(name, userName, password)
         call.enqueue(object : Callback<String> {
             override fun onResponse(@NonNull call: Call<String>, @NonNull response: Response<String>) {
+
                 if (response.isSuccessful() && response.body() != null) {
                     Log.e("onSuccess", response.body()!!)
 
@@ -78,6 +81,8 @@ class MainActivity : AppCompatActivity() {
         if(jsonObject.optString("status").equals("true")){
             saveInfo(response)
             Toast.makeText(applicationContext, "회원가입 성공", Toast.LENGTH_SHORT).show()
+            val intent = Intent(applicationContext, LoginSuccessActivity::class.java)
+            startActivity(intent)
         } else{
             Toast.makeText(applicationContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show()
         }

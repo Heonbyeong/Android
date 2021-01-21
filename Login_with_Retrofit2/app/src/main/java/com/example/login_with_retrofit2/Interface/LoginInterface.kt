@@ -7,7 +7,7 @@ import retrofit2.http.POST
 
 interface LoginInterface {
     companion object{
-        val LOGIN_URL = "http://121.159.100.77/"
+        val LOGIN_URL = "http://192.168.0.26:80"
     }
     @FormUrlEncoded
     @POST("retrofit_simplelogin.php")

@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     include_once("retrofit_config.php");
 
     $name = $_POST['name'];
-    $username = $_POST['userName'];
+    $userName = $_POST['userName'];
     $password = $_POST['password'];
 
     if($name == '' || $userName == '' || $password == '')
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     else
     {
-        $query= "SELECT * FROM retrofitRegister WHERE userName='$userName'";
+        $query= "SELECT * FROM user WHERE userName='$userName'";
         $result= mysqli_query($con, $query);
 
         if(mysqli_num_rows($result) > 0){
@@ -25,10 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         }
         else
         {
-            $query = "INSERT INTO retrofitRegister (name,userName,password) VALUES ('$name','$userName','$password')";
+            $query = "INSERT INTO user (name,userName,password) VALUES ('$name','$userName','$password')";
             if(mysqli_query($con,$query))
             {
-                $query= "SELECT * FROM retrofitRegister WHERE userName='$userName'";
+                $query= "SELECT * FROM user WHERE userName='$userName'";
                 $result= mysqli_query($con, $query);
                 $emparray = array();
                 if(mysqli_num_rows($result) > 0)
