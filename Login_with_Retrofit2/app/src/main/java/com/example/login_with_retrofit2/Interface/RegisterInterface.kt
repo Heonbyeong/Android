@@ -13,8 +13,8 @@ interface RegisterInterface {
     @FormUrlEncoded
     @POST("retrofit_simpleregister.php")
     fun getUserRegist(
-            @Field("name") name : String,
-            @Field("userName") userName : String,
-            @Field("password") password : String
+            @Field("name") name: String,
+            @Field("userName") userName: String,
+            @Field("password") password: String
     ) : Call<String>
 }

@@ -12,7 +12,7 @@ interface LoginInterface {
     @FormUrlEncoded
     @POST("retrofit_simplelogin.php")
     fun getUserLogin(
-            @Field("userName") userName : String,
-            @Field("password") password : String
+            @Field("userName") userName: String,
+            @Field("password") password: String
     ) : Call<String>
 }

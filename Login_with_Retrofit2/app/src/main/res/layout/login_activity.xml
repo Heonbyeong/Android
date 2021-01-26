@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/etusername"
+        android:id="@+id/etusername2"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="20dp"
@@ -19,7 +19,7 @@
         android:paddingLeft="5dp" />
 
     <EditText
-        android:id="@+id/etpassword"
+        android:id="@+id/etpassword2"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="20dp"
@@ -31,7 +31,7 @@
         android:paddingLeft="5dp" />
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/btnlogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"

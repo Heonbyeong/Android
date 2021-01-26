@@ -10,5 +10,6 @@ class LoginSuccessActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_success)
 
+
     }
 }
