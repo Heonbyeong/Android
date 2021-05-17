@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.calculator_mvvm.viewmodel.MainViewModel" />
+    </data>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/calculatorBackground"
+        tools:context=".view.MainActivity">
+
+        <TextView
+            android:id="@+id/number_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/displaySectionBackground"
+            android:gravity="end"
+            android:padding="10dp"
+            android:textColor="@color/displaySectionTextColor"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:text="@={viewModel.currentInput}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <GridLayout
+            android:id="@+id/button_grid_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:alignmentMode="alignBounds"
+            android:columnCount="4"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:rowCount="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/number_text_view">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/cButtonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:onClick="@{() -> viewModel.doAC()}"
+                android:text="C"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="÷"
+                android:onClick="@{()->viewModel.doOperation(4)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="7"
+                android:onClick="@{()->viewModel.inputNumber(7)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="8"
+                android:onClick="@{()->viewModel.inputNumber(8)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="9"
+                android:onClick="@{()->viewModel.inputNumber(9)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="x"
+                android:onClick="@{()->viewModel.doOperation(3)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="4"
+                android:onClick="@{()->viewModel.inputNumber(4)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="5"
+                android:onClick="@{()->viewModel.inputNumber(5)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="6"
+                android:onClick="@{()->viewModel.inputNumber(6)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="-"
+                android:onClick="@{()->viewModel.doOperation(2)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:onClick="@{() -> viewModel.inputNumber(1)}"
+                android:text="1"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="2"
+                android:onClick="@{() -> viewModel.inputNumber(2)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="3"
+                android:onClick="@{()->viewModel.inputNumber(3)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="+"
+                android:onClick="@{()->viewModel.doOperation(1)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="0"
+                android:onClick="@{() -> viewModel.inputNumber(0)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="."
+                android:onClick="@{()->viewModel.inputNumber(-1)}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:backgroundTint="@color/buttonBackground"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="="
+                android:onClick="@{()->viewModel.getTheResult()}"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="18sp" />
+        </GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
