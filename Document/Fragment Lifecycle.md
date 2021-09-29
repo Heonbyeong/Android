@@ -81,3 +81,9 @@
 - Fragment 제거 혹은 FragmentManager가 destroy 됐을 때 → Fragment 생명주기 CREATED → DESTROYED
 - 해당 지점은 Fragment 생명주기의 끝을 알림
 - onDetach()는 onDestroy() 이후에 호출됨
+
+
+
+## 참고
+
+https://readystory.tistory.com/199
